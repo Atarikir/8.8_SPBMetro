@@ -25,8 +25,7 @@ public class RouteCalculator
         }
 
         route = getRouteWithOneConnection(from, to);
-        if(route != null) {
-            return route;
+        if(route != null) { //&& route.size() > 0 - не хватает еще одного условияreturn route;
         }
 
         route = getRouteWithTwoConnections(from, to);
