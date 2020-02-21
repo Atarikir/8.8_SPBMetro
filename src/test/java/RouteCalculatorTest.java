@@ -100,7 +100,6 @@ public class RouteCalculatorTest {
     public void distance_to_same_station() throws Exception { //расстояние до той же станции
         List<Station> actual = routeCalculator.getShortestRoute(route.get(0), route.get(0));
         List<Station> expected = new ArrayList<>();
-            //expected.add();
             expected.add(stationIndex.getStation("A", 1));
         Assert.assertEquals(expected, actual);
     }
