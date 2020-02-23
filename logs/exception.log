@@ -1,0 +1,8 @@
+2020-02-23 22:43:40.035 [main] ERROR  - An exception occurred.
+exception.TheStringIsEmpty: The string is empty!
+	at Main.takeStation(Main.java:75) ~[classes/:?]
+	at Main.main(Main.java:32) [classes/:?]
+2020-02-23 22:44:37.517 [main] ERROR  - An exception occurred.
+exception.TheStringIsEmpty: The string is empty!
+	at Main.takeStation(Main.java:75) ~[classes/:?]
+	at Main.main(Main.java:34) [classes/:?]

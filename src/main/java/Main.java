@@ -1,5 +1,6 @@
 import core.Line;
 import core.Station;
+import exception.TheStringIsEmpty;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONArray;
@@ -40,7 +41,7 @@ public class Main {
                 System.out.println("Длительность: " +
                         RouteCalculator.calculateDuration(route) + " минут");
             }catch (Exception ex) {
-                logger.info("An exception occurred.", ex);
+                logger.error("An exception occurred.", ex);
             }
         }
     }
@@ -70,11 +71,14 @@ public class Main {
         for (; ; ) {
             System.out.println(message);
             String line = scanner.nextLine().trim();
+            if(line.isEmpty()) {
+                throw new TheStringIsEmpty("The string is empty!");
+            }
             Station station = stationIndex.getStation(line);
             if (station != null) {
                 return station;
             }
-            logger.info("Станция не найдена: " + line);
+            logger.warn("Станция не найдена: " + line);
             System.out.println("Станция не найдена :(");
         }
     }
