@@ -1,8 +1,23 @@
-2020-02-23 22:43:40.035 [main] ERROR  - An exception occurred.
-exception.TheStringIsEmpty: The string is empty!
-	at Main.takeStation(Main.java:75) ~[classes/:?]
-	at Main.main(Main.java:32) [classes/:?]
-2020-02-23 22:44:37.517 [main] ERROR  - An exception occurred.
-exception.TheStringIsEmpty: The string is empty!
-	at Main.takeStation(Main.java:75) ~[classes/:?]
-	at Main.main(Main.java:34) [classes/:?]
+2020-02-27 21:15:25.209 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:20:02.649 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:20:04.102 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:20:05.008 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:27:22.172 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:27:36.132 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:27:38.491 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:27:39.553 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:27:40.288 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:27:40.944 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:27:44.210 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:28:04.752 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:28:06.798 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:28:07.642 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:28:08.314 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:28:08.939 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:28:09.414 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:29:04.195 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:29:34.234 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:29:40.124 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:29:40.936 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:45:19.092 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!
+2020-02-27 21:45:34.430 [main] ERROR Main - exception.TheStringIsEmpty: The string is empty!

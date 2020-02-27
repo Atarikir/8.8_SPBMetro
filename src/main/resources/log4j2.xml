@@ -8,33 +8,31 @@
         <File name="SearchFile" fileName="logs/search.log">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
             <Filters>
-                <ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL" />
+                <MarkerFilter marker="INPUT_HISTORY" />
             </Filters>
         </File>
 
         <File name="InputErrors" fileName="logs/input_errors.log">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
             <Filters>
-                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL" />
+                <MarkerFilter marker="INVALID_STATIONS" />
             </Filters>
         </File>
 
         <File name="Exception" fileName="logs/exception.log">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
             <Filters>
-                <ThresholdFilter level="fatal" onMatch="DENY" onMismatch="NEUTRAL" />
+                <MarkerFilter marker="EXCEPTION" />
             </Filters>
         </File>
-
-
 
     </appenders>
 
     <loggers>
-        <root level="all">
-            <appender-ref ref="SearchFile" level="info"/>
-            <appender-ref ref="InputErrors" level="warn"/>
-            <appender-ref ref="Exception" level="error"/>
+        <root level="trace">
+            <appender-ref ref="SearchFile" />
+            <appender-ref ref="InputErrors" />
+            <appender-ref ref="Exception" />
         </root>
     </loggers>
 

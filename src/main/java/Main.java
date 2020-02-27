@@ -3,6 +3,8 @@ import core.Station;
 import exception.TheStringIsEmpty;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.MarkerManager;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -14,7 +16,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static Logger logger;
+    private static final Logger LOGGER = LogManager.getLogger(Main.class);
+
+    private static final Marker INPUT_HISTORY_MARKER = MarkerManager.getMarker("INPUT_HISTORY");
+    private static final Marker INVALID_STATIONS_MARKER = MarkerManager.getMarker("INVALID_STATIONS");
+    private static final Marker EXCEPTION = MarkerManager.getMarker("EXCEPTION");
 
     private static String dataFile = "src/main/resources/map.json";
     private static Scanner scanner;
@@ -23,16 +29,16 @@ public class Main {
 
     public static void main(String[] args) {
         RouteCalculator calculator = getRouteCalculator();
-        logger = LogManager.getRootLogger();
 
         System.out.println("Программа расчёта маршрутов метрополитена Санкт-Петербурга\n");
         scanner = new Scanner(System.in);
         for (; ; ) {
             try {
                 Station from = takeStation("Введите станцию отправления:");
-                logger.info("Станция отправления: " + from);
+                LOGGER.info(INPUT_HISTORY_MARKER, "Пользователь ввел станцию отправления: {}", from);
                 Station to = takeStation("Введите станцию назначения:");
-                logger.info("Станция назначения: " + to);
+                LOGGER.info(INPUT_HISTORY_MARKER, "Пользователь ввел станцию назначения: {}", to);
+
 
                 List<Station> route = calculator.getShortestRoute(from, to);
                 System.out.println("Маршрут:");
@@ -40,8 +46,8 @@ public class Main {
 
                 System.out.println("Длительность: " +
                         RouteCalculator.calculateDuration(route) + " минут");
-            }catch (Exception ex) {
-                logger.error("An exception occurred.", ex);
+            } catch (Exception ex) {
+                LOGGER.error(EXCEPTION, ex.toString());
             }
         }
     }
@@ -71,15 +77,16 @@ public class Main {
         for (; ; ) {
             System.out.println(message);
             String line = scanner.nextLine().trim();
-            if(line.isEmpty()) {
+            if (line.isEmpty()) {
                 throw new TheStringIsEmpty("The string is empty!");
             }
             Station station = stationIndex.getStation(line);
             if (station != null) {
                 return station;
             }
-            logger.warn("Станция не найдена: " + line);
+            LOGGER.warn(INVALID_STATIONS_MARKER, "Станция введена не верно {}", line);
             System.out.println("Станция не найдена :(");
+            
         }
     }
 
